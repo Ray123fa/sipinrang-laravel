@@ -4,6 +4,12 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+    --primary-1: #0092d7;
+    --primary-2: #2a4e9b;
+    --secondary: #6c757d;
+}
+
 * {
     font-family: "Quicksand", sans-serif;
 }
@@ -16,9 +22,92 @@
     @apply text-white text-2xl font-bold ml-1;
 }
 
+.hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.hero-content {
+    height: 60vh;
+    background-color: rgba(42, 74, 155, 0.75);
+    color: #fff;
+}
+.hero-title {
+    font-size: 2.25rem;
+    font-weight: bold;
+}
+.hero-desc {
+    font-size: 1.5rem;
+}
+
+.btn {
+    background-color: var(--primary-1);
+    color: #fff;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.content-wrapper {
+    position: relative;
+    right: 0;
+    left: 0;
+    margin: -3rem auto 0 auto;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 80%;
+}
+.content {
+    width: 90%;
+    margin: 0 auto;
+}
+.content-title {
+    font-size: 1.75rem;
+}
+.content-desc {
+    font-size: 1.125rem;
+}
+.horizontal-line {
+    height: 0.125rem;
+    margin: 1rem auto;
+    opacity: 0.5;
+    @apply bg-gradient-primary;
+}
+
+.service-card {
+    border: 1px solid var(--secondary);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin: 1rem 0;
+    width: calc(100% / 3);
+}
+.service-card:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+@media screen and (max-width: 992px) {
+    #services-card-wrapper {
+        flex-direction: column;
+    }
+    .service-card {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .nav-brand {
         font-size: 1.25rem;
+    }
+
+    .content-wrapper {
+        width: 90%;
+    }
+    .content {
+        width: 100%;
     }
 }
 
@@ -35,5 +124,14 @@
     }
     #mobile-nav {
         display: block;
+    }
+
+    .hero-title,
+    .content-title {
+        font-size: 1.5rem;
+    }
+    .hero-desc,
+    .content-desc {
+        font-size: 1rem;
     }
 }

@@ -1,7 +1,7 @@
 @props(['title' => 'Sipinrang'])
 
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" :class="{ 'theme-dark': dark }" x-data="data()">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" :class="{ 'dark': dark }" x-data="data()">
 
 <head>
   <meta charset="utf-8">
@@ -21,7 +21,7 @@
   <script src="{{ asset('js/focus-trap.js') }}"></script>
   <script src="{{ asset('js/init-alpine.js') }}"></script>
 
-  @vite(['resources/css/dashboard.css'])
+  @vite(['resources/css/app.css'])
 </head>
 
 <body class="font-sans antialiased">

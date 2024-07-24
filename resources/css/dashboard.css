@@ -1,5 +1,13 @@
 @config "../../tw-dashboard.config.js";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    scroll-behavior: smooth;
+}
+
 html {
     line-height: 1.15;
     -webkit-text-size-adjust: 100%;

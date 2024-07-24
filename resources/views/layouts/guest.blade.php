@@ -26,5 +26,32 @@
                 {{ $slot }}
             </div>
         </div>
+
+        <script>
+            setDark = () => {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('dark', 'true');
+            }
+            setLight = () => {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('dark', 'false');
+            }
+
+            window.onload = function() {
+                const darkMode = localStorage.getItem('dark');
+
+                if (darkMode === 'true') {
+                    setDark();
+                } else if (darkMode === 'false') {
+                    setLight();
+                } else {
+                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                        setDark();
+                    } else {
+                        setLight();
+                    }
+                }
+            }
+        </script>
     </body>
 </html>

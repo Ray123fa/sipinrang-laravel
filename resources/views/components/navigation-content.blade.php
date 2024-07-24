@@ -5,7 +5,7 @@
     {{ $textLogo }}
   </a>
   <ul class="mt-6">
-    <x-nav-link :active='true' href="">
+    <x-nav-link href="{{ route('dashboard') }}" :active="request()->routeIs('dashboard')">
       <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
         viewBox="0 0 24 24" stroke="currentColor">
         <path
@@ -16,7 +16,7 @@
     </x-nav-link>
   </ul>
   <ul>
-    <x-nav-link href="">
+    <x-nav-link href="#">
       <svg class="w-5 h-5" aria-hidden="true" fill="none" stroke-linecap="round" stroke-linejoin="round"
         stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
         <path
